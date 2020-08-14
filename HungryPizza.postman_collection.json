@@ -1,0 +1,195 @@
+{
+	"info": {
+		"_postman_id": "39548ffc-a3bb-4f67-a190-4dc741a1222e",
+		"name": "HungryPizza",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Pizza",
+			"item": [
+				{
+					"name": "https://localhost:44384/api/pizza/getall",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44384/api/pizza/getall",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44384",
+							"path": [
+								"api",
+								"pizza",
+								"getall"
+							]
+						},
+						"description": "Lista todas as pizzas"
+					},
+					"response": []
+				},
+				{
+					"name": "https://localhost:44384/api/pizza/getbyid/1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44384/api/pizza/getbyid/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44384",
+							"path": [
+								"api",
+								"pizza",
+								"getbyid",
+								"1"
+							]
+						},
+						"description": "Busca Pizza"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "https://localhost:44384/api/customer/getall",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44384/api/customer/getall",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44384",
+							"path": [
+								"api",
+								"customer",
+								"getall"
+							]
+						},
+						"description": "Lista todos os Clientes."
+					},
+					"response": []
+				},
+				{
+					"name": "https://localhost:44384/api/customer/getbyid/1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44384/api/customer/getbyid/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44384",
+							"path": [
+								"api",
+								"customer",
+								"getbyid",
+								"1"
+							]
+						},
+						"description": "Busca de Cliente."
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "https://localhost:44384/api/order/getbycustomers/1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44384/api/order/getbycustomers/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44384",
+							"path": [
+								"api",
+								"order",
+								"getbycustomers",
+								"1"
+							]
+						},
+						"description": "Retorna histórico de Pedido de um Cliente"
+					},
+					"response": []
+				},
+				{
+					"name": "https://localhost:44384/api/order/getbyid/1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44384/api/order/getbyid/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44384",
+							"path": [
+								"api",
+								"order",
+								"getbyid",
+								"1"
+							]
+						},
+						"description": "Busca Pedido"
+					},
+					"response": []
+				},
+				{
+					"name": "https://localhost:44384/api/order/add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"date\": \"2020-08-14T19:21:23.928Z\",\r\n  \"orderItems\": [\r\n    {\r\n      \"orderItemSplits\": [\r\n        {\r\n          \"pizza\": {\r\n            \"id\": 1\r\n          }\r\n        }\r\n      ],\r\n      \"splitPie\": false,\r\n      \"quantity\": 1\r\n    }\r\n  ],\r\n  \"orderDelivery\": {\r\n    \"zipCode\": \"13330-180\",\r\n    \"address1\": \"Rua Candelária\",\r\n    \"number\": \"100\",\r\n    \"district\": \"Centro\",\r\n    \"city\": \"Indaiatuba\",\r\n    \"state\": \"São Paulo\",\r\n    \"country\": \"Brasil\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44384/api/order/add",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44384",
+							"path": [
+								"api",
+								"order",
+								"add"
+							]
+						},
+						"description": "Inclusão de Pedido."
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
