@@ -33,15 +33,15 @@ Seu desafio é criar uma API para receber os pedidos feitos a partir do site da 
 PROJETOS DA SOLUÇÃO
 *******************************
 
-• HungryPizza.Presentation: Aplicação Web API, usando Swagger permite assim mapear os metodos, e testar a aplicação.
+• HungryPizza.Presentation: Contém a aplicação Web API, usando Swagger permite assim mapear os metodos, e testar a aplicação.
 
-• HungryPizza.Application: Nesta camada contém os serviços, interfaces, regras de negócio e validações.
+• HungryPizza.Application: Contém os serviços, interfaces, regras de negócio e validações.
 
-• HungryPizza.Infrastructure: Nesse repositorio temos as classes referentes ao repositório e conexão com o banco de dados.
+• HungryPizza.Infrastructure: Contém as classes referentes ao repositório e conexão com o banco de dados.
 
-• HungryPizza.Domain: Nesse repositorio possui as entidades do projeto.
+• HungryPizza.Domain: Contém as entidades do projeto.
 
-• HungryPizza.Tests: Nesse repositorio possui os testes automatizados. Permite testar os commands, queries e controllers utilizando dados mockados.
+• HungryPizza.Tests: Contém os testes automatizados. Permite testar os commands, queries e controllers utilizando dados mockados.
 
 
 *******************************
