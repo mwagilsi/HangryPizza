@@ -7,7 +7,9 @@ Esta é uma pizzaria muito famosa no bairro, seus donos sempre foram muito retic
 Seu desafio é criar uma API para receber os pedidos feitos a partir do site da pizzaria que atenda aos requisitos abaixo:
 
 1 - Todo pedido precisa ter um identificador único
+
 2 - Um pedido pode ter no mínimo uma pizza e no máximo 10.
+
 3 - Cada pizza pode ter até dois sabores, os sabores disponíveis são:
  - Três Queijos (R$ 50)
  - Frango com requeijão (R$ 59.99)
