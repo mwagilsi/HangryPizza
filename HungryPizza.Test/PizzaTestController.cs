@@ -1,10 +1,8 @@
 using AutoMapper;
+using HungryPizza.Application.Services;
 using HungryPizza.Controllers;
-using HungryPizza.Models;
-using HungryPizza.Services;
-using HungryPizzaDB;
+using HungryPizza.Infrastructure.Context;
 using HungryPizzaServices.IServices;
-using HungryPizzaServices.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualStudio.TestTools.UnitTesting;

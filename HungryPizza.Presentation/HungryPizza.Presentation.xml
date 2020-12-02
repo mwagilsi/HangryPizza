@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HungryPizza.Presentation</name>
+    </assembly>
+    <members>
+        <member name="T:HungryPizza.Controllers.CustomerController">
+            <summary>
+            Responsável por conter os métodos referentes aos Clientes que serão expostos na Api.
+            </summary>
+        </member>
+        <member name="M:HungryPizza.Controllers.CustomerController.#ctor(HungryPizzaServices.IServices.ICustomerServices)">
+            <summary>
+            Cria uma instância da classe <see cref="T:HungryPizza.Controllers.CustomerController"/>.
+            </summary>
+            <param name="customerServices"></param>
+        </member>
+        <member name="M:HungryPizza.Controllers.CustomerController.GetAll">
+            <summary>  
+            Lista todos Clientes
+            </summary>  
+            <response code="200">Sucesso com retorno dos Clientes</response>
+            <response code="400">Requisição não foi encontrada</response>
+            <response code="500">Erro interno do servidor</response>
+            <returns>Clientes</returns>
+        </member>
+        <member name="M:HungryPizza.Controllers.CustomerController.GetById(System.Int32)">
+            <summary>  
+            Busca Cliente por Código
+            </summary>  
+            <param name="id">Código do Cliente</param>
+            <response code="200">Sucesso com retorno do Cliente</response>
+            <response code="400">Requisição não foi encontrada</response>
+            <response code="500">Erro interno do servidor</response>
+            <returns>Cliente</returns>
+        </member>
+        <member name="T:HungryPizza.Controllers.OrderController">
+            <summary>
+            Responsável por conter os métodos referentes aos Pedidos que serão expostos na Api.
+            </summary>
+        </member>
+        <member name="M:HungryPizza.Controllers.OrderController.#ctor(HungryPizzaServices.IServices.IOrderServices)">
+            <summary>
+            Cria uma instância da classe <see cref="T:HungryPizza.Controllers.OrderController"/>.
+            </summary>
+            <param name="orderServices"></param>
+        </member>
+        <member name="M:HungryPizza.Controllers.OrderController.GetByCustomers(System.Int32)">
+            <summary>  
+            Busca Histórico de Pedidos
+            </summary>  
+            <param name="id">Código do Cliente</param>
+            <response code="200">Sucesso com retorno do Histórico de Pedido por Cliente</response>
+            <response code="400">Requisição não foi encontrada</response>
+            <response code="500">Erro interno do servidor</response>
+            <returns>Pedidos</returns>
+        </member>
+        <member name="M:HungryPizza.Controllers.OrderController.GetById(System.Int32)">
+            <summary>  
+            Busca de Pedido
+            </summary>  
+            <param name="id">Código do Pedido</param>
+            <response code="200">Sucesso com retorno da Busca do Pedido</response>
+            <response code="400">Requisição não foi encontrada</response>
+            <response code="500">Erro interno do servidor</response>
+            <returns>Pedido</returns>
+        </member>
+        <member name="M:HungryPizza.Controllers.OrderController.Add(HungryPizza.Application.Models.OrderViewModel)">
+            <summary>  
+            Inclui um Pedido
+            </summary>  
+            <response code="200">Sucesso com a inclusão do Pedido</response>
+            <response code="400">Requisição não foi encontrada</response>
+            <response code="500">Erro interno do servidor</response>
+            <returns>Pedido</returns>
+        </member>
+        <member name="T:HungryPizza.Controllers.PizzaController">
+            <summary>
+            Responsável por conter os métodos referentes as Pizzas que serão expostos na Api.
+            </summary>
+        </member>
+        <member name="M:HungryPizza.Controllers.PizzaController.#ctor(HungryPizzaServices.IServices.IPizzaServices)">
+            <summary>
+            Cria uma instância da classe <see cref="T:HungryPizza.Controllers.PizzaController"/>.
+            </summary>
+            <param name="pizzaServices"></param>
+        </member>
+        <member name="M:HungryPizza.Controllers.PizzaController.GetAll">
+            <summary>  
+            Lista todas as Pizzas
+            </summary>  
+            <response code="200">Sucesso com retorno das Pizzas</response>
+            <response code="400">Requisição não foi encontrada</response>
+            <response code="500">Erro interno do servidor</response>
+            <returns>Pizzas</returns>
+        </member>
+        <member name="M:HungryPizza.Controllers.PizzaController.GetById(System.Int32)">
+            <summary>  
+            Busca Pizza por Código
+            </summary>  
+            <param name="id">Código da Pizza</param>
+            <response code="200">Sucesso com retorno da Pizza</response>
+            <response code="400">Requisição não foi encontrada</response>
+            <response code="500">Erro interno do servidor</response>
+            <returns>Pizza</returns>
+        </member>
+    </members>
+</doc>

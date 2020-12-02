@@ -14,7 +14,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\HungryPizza\HungryPizza.csproj" />
+    <ProjectReference Include="..\HungryPizza.Application\HungryPizza.Application.csproj" />
+    <ProjectReference Include="..\HungryPizza.Presentation\HungryPizza.Presentation.csproj" />
+    <ProjectReference Include="..\HungryPizza.Infrastructure\HungryPizza.Infrastructure.csproj" />
+    <ProjectReference Include="..\HungryPizza.Presentation\HungryPizza.Presentation.csproj" />
   </ItemGroup>
 
 </Project>
