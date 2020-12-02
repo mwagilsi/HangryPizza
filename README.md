@@ -1,4 +1,6 @@
+*******************************
 PROPOSTA DO PROJETO
+*******************************
 
 Esta é uma pizzaria muito famosa no bairro, seus donos sempre foram muito reticentes quando o assunto é a venda online, mas diante das atuais circunstâncias eles tiveram de reconsiderar.
 
@@ -27,7 +29,9 @@ Seu desafio é criar uma API para receber os pedidos feitos a partir do site da 
 
 10 - Fique a vontade para testar os cenários que achar mais relevantes.
 
+*******************************
 PROJETOS DA SOLUÇÃO
+*******************************
 
 • HungryPizza.Presentation: Aplicação Web API, usando Swagger permite assim mapear os metodos, e testar a aplicação.
 
@@ -40,7 +44,9 @@ PROJETOS DA SOLUÇÃO
 • HungryPizza.Tests: Nesse repositorio possui os testes automatizados. Permite testar os commands, queries e controllers utilizando dados mockados.
 
 
+*******************************
 DADOS DO PROJETO
+*******************************
 
 .NET Core
 
@@ -52,7 +58,9 @@ Entity Framework
 
 SQLServer
 
+*******************************
 PATTERNS/DESIGNS
+*******************************
 
 Domain Driven Design
 
