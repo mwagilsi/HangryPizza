@@ -1,36 +1,25 @@
-using AutoMapper;
 using HungryPizza.Application.Models;
 using HungryPizza.Application.Services;
 using HungryPizza.Controllers;
-using HungryPizza.Infrastructure.Context;
 using HungryPizzaServices.IServices;
 using HungryPizzaServices.Services;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Threading.Tasks;
+using Xunit;
 
 namespace HungryPizza.Test
 {
     [TestClass]
-    public class OrderTestController
+    public class OrderTestController : BaseTestController
     {
         [TestMethod]
+        [Fact(DisplayName = "Busca Pedido por código")]
         public async Task Get()
         {
-            var optionsBuilder = new DbContextOptionsBuilder<HungryPizzaContext>()
-                .UseSqlServer("Server=bd.asp.hostazul.com.br,3533;Database=10337_hungrypizza;Uid=10337_hungrypizza;Password=hungrypizza@1;").Options;
-            var context = new HungryPizzaContext(optionsBuilder);
-
-            var mockMapper = new MapperConfiguration(cfg =>
-            {
-                cfg.AddProfile(new AutoMapper());
-            });
-            var mapper = mockMapper.CreateMapper();
-
             IPizzaServices _pizzaServices = new PizzaServices(context, mapper);
             ICustomerServices _customerServices = new CustomerServices(context, mapper);
             IOrderServices _orderServices = new OrderServices(_customerServices, _pizzaServices, context, mapper);
@@ -44,18 +33,9 @@ namespace HungryPizza.Test
         }
 
         [TestMethod]
+        [Fact(DisplayName = "Inclui o Pedido")]
         public async Task Post()
         {
-            var optionsBuilder = new DbContextOptionsBuilder<HungryPizzaContext>()
-                .UseSqlServer("Server=bd.asp.hostazul.com.br,3533;Database=10337_hungrypizza;Uid=10337_hungrypizza;Password=hungrypizza@1;").Options;
-            var context = new HungryPizzaContext(optionsBuilder);
-
-            var mockMapper = new MapperConfiguration(cfg =>
-            {
-                cfg.AddProfile(new AutoMapper());
-            });
-            var mapper = mockMapper.CreateMapper();
-
             IPizzaServices _pizzaServices = new PizzaServices(context, mapper);
             ICustomerServices _customerServices = new CustomerServices(context, mapper);
             IOrderServices _orderServices = new OrderServices(_customerServices, _pizzaServices, context, mapper);

@@ -1,4 +1,5 @@
 ﻿using HungryPizza.Application.Models;
+using HungryPizza.Application.Services;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -9,6 +10,6 @@ namespace HungryPizzaServices.IServices
     {
         Task<List<OrderViewModel>> GetOrdersByCustomer(int id);
         Task<OrderViewModel> GetOrderById(int id);
-        Task<Tuple<bool, string>> AddOrder(OrderViewModel order);
+        Task<Result> AddOrder(OrderViewModel order);
     }
 }

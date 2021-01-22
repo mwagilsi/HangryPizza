@@ -78,19 +78,15 @@ namespace HungryPizza.Controllers
         [HttpPost("Add")]
         public async Task<IActionResult> Add(OrderViewModel order)
         {
-            Tuple<bool, string> IsOrderAdded;
-
             if (!ModelState.IsValid)
                 return BadRequest("Dados inválidos.");
-            else
-            {
-                IsOrderAdded = await _orderServices.AddOrder(order);
-            }
 
-            if (IsOrderAdded.Item1)
-                return Ok(IsOrderAdded.Item2);
+            var result = await _orderServices.AddOrder(order);
+
+            if (result.Success)
+                return Ok(result.Message);
             else
-                return BadRequest(IsOrderAdded.Item2);
+                return BadRequest(result.Message);
         }
 
     }

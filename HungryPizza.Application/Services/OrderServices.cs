@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using HungryPizza.Application.Models;
+using HungryPizza.Application.Services;
 using HungryPizza.Domain.Entities;
 using HungryPizza.Infrastructure.Context;
 using HungryPizzaServices.IServices;
@@ -44,18 +45,18 @@ namespace HungryPizzaServices.Services
 
             return _mapper.Map<OrderViewModel>(result);
         }
-        public async Task<Tuple<bool,string>> AddOrder(OrderViewModel order)
+        public async Task<Result> AddOrder(OrderViewModel order)
         {
             try
             {
                 if (order.OrderItems.Count == 0)
-                    return new Tuple<bool, string>(false, "O Pedido deve ter ao menos uma pizza.");
+                    return new Result() { Success = false, Message = "O Pedido deve ter ao menos uma pizza." };
 
                 if (order.OrderItems.Count > 10)
-                    return new Tuple<bool, string>(false, "O Pedido máximo é de 10 pizzas.");
+                    return new Result() { Success = false, Message = "O Pedido máximo é de 10 pizzas." };
 
                 if (order.OrderItems.Any(a => a.OrderItemSplits.Where(w => w.OrderItemId == a.Id).Count() > 2))
-                    return new Tuple<bool, string>(false, "Cada pizza podem ter no máximo 2 sabores.");
+                    return new Result() { Success = false, Message = "Cada pizza podem ter no máximo 2 sabores." };
 
                 // Se o Pedido tiver um cliente cadastrado pega os dados do cliente.
                 if (order.CustomerId.HasValue)
@@ -103,11 +104,11 @@ namespace HungryPizzaServices.Services
                 await _context.Orders.AddAsync(_mapper.Map<Order>(order));
                 await _context.SaveChangesAsync();
 
-                return new Tuple<bool,string>(true,"Pedido incluído com sucesso!");
+                return new Result() { Success = true, Message = "Pedido incluído com sucesso!" };
             }
             catch (Exception e)
             {
-                return new Tuple<bool, string>(false, e.Message); 
+                return new Result() { Success = false, Message = e.Message }; 
             }
         }
     }

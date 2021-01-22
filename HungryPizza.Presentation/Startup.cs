@@ -16,7 +16,7 @@ using System.Reflection;
 
 namespace HungryPizza
 {
-    #pragma warning disable 1591
+#pragma warning disable 1591
     public class Startup
     {
         public Startup(IConfiguration configuration)
@@ -48,7 +48,6 @@ namespace HungryPizza
 
                 c.IncludeXmlComments(xmlPath);
             });
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
